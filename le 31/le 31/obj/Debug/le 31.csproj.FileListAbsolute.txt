@@ -1,0 +1,7 @@
+M:\visual studio 2017\Projects\le 31\le 31\bin\Debug\le 31.exe.config
+M:\visual studio 2017\Projects\le 31\le 31\bin\Debug\le 31.exe
+M:\visual studio 2017\Projects\le 31\le 31\bin\Debug\le 31.pdb
+M:\visual studio 2017\Projects\le 31\le 31\obj\Debug\le 31.csprojAssemblyReference.cache
+M:\visual studio 2017\Projects\le 31\le 31\obj\Debug\le 31.csproj.CoreCompileInputs.cache
+M:\visual studio 2017\Projects\le 31\le 31\obj\Debug\le 31.exe
+M:\visual studio 2017\Projects\le 31\le 31\obj\Debug\le 31.pdb
