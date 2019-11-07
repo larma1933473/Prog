@@ -1,158 +1,160 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace aléatoire_exercise_2
+namespace examen_2
 {
     class Program
     {
-        static void AfficherMenu()
-        {
-              Console.WriteLine("pour trouver le plus grand nombre appuyer sur 1 \n pour le plus petit appuyer sur  2 \n pour verifier si la saisis existe appuyer sur 3\n pour faire la moyenne appuyer sur 4\n pour quitter appuyer sur 5\n pour  voir si un nombre est supérireur a 9995 appuyer sur 6 \n appuyer sur 7 pour savoir si un nombre revien 3 fois \n ");       
-        }
-        static void AfficherGrandNombre(ref int[] table)
-        {
-            double grandNb = table[0];
 
-            for (int i = 1; i < table.Length; i++)
-            {
-                if(grandNb<table[i])
-                {
-                    grandNb=table[i];
-                }
-            }
-            Console.WriteLine("le plus grand nombre est " + grandNb);
-        }
-        
-        static void AfficherPetitNombre(ref int[] table)
-        { 
-            double petitnb = table[0];
-
-            for (int i = 1; i > table.Length; i++)
-            {
-                if(petitnb>table[i])
-                {
-                    petitnb=table[i];
-                }
-            }
-            Console.WriteLine("le plus petit nombre est " + petitnb);
-        }
-        
-        static void VérifierNombreExiste(ref int[] table)
+        static void afficherMenu()
         {
-             double nombresaisi=0;
-         
-            Convert.ToInt32(Console.ReadLine());
-            int cpt= 0;
-            bool nombreexiste=false;
-            while(nombreexiste== false && cpt<table.Length)
-            {
-                if(nombresaisi==table[cpt])
-                {
-                    nombreexiste=true;
-                    Console.WriteLine("le nombre existe et est a la position "+ i);
-                }
-                else
-                {
-                    cpt++;
-                }
-                Console.WriteLine("le nombre n'existe pas");
-            }
-         
+            Console.WriteLine("bonjours joueur, ");
+            Console.WriteLine("appuyez sur 1 pour afficher les vaisseaux avec toutes les caractéristiques ");
+            Console.WriteLine("appuyez sur 2 pour vérifier si un vaisseau légendaire existe ");
+            Console.WriteLine("appuyer sur 3 pour trouver le vaisseaux avec la vie la plus haute ");
+            Console.WriteLine("appuyer sur 4 pour voir la moyenne des prix des vaisseaux ");
+            Console.WriteLine("appuyez sur 5 pour quitter");
         }
-        static void nombreSupérieur(ref int[] table)
+        static void afficherVaisseaux(ref int[] tabVaisseaux,int prix,int vie, int vitesse)
         {
-            double nombresupérieur = 0;
+            for (int i=0; i<tabVaisseaux.Length;i++)
+            {
+                Console.WriteLine("" + tabVaisseaux[i] + prix + vie + vitesse);
+            }
+        }
+        static void vaisseauExiste(ref int[] tabVaisseaux)
+        {
+            double nombresaisi = 0;
 
             Convert.ToInt32(Console.ReadLine());
             int cpt = 0;
-            bool nombregrand = false;
-            while (nombregrand == false && cpt < table.Length)
+            bool vaisseauxExiste = false;
+            while (vaisseauxExiste == false && cpt < tabVaisseaux.Length)
             {
-                if (nombresupérieur >= 9995)
+                if (nombresaisi == tabVaisseaux[cpt])
                 {
-                    nombregrand = true;
-                    Console.WriteLine("il y a des nombres supérieur a 9995");
+                    vaisseauxExiste = true;
+                    Console.WriteLine("le vaisseau existe ");
                 }
                 else
                 {
                     cpt++;
                 }
+                Console.WriteLine("le vaisseau n'existe pas");
             }
         }
-        static void AfficherMoyenne(ref int[] table)
+        static void grandeVie(ref int[] tabVaisseaux)
         {
-          
-            int total=0;
-            int moyenne=0;
-                
-            for(int i=0; i<table.Length;i++)
+            int grandVie = tabVaisseaux[0];
+            for (int i = 1; i < tabVaisseaux.Length; i++)
             {
-                total=total + table[i];
+                if(grandVie< tabVaisseaux[i])
+                {
+                    grandVie = tabVaisseaux[i];
+                }
             }
-            moyenne=total/table.Length;
+        }
+        static void moyenne(ref int[] tabVaisseaux, int prix)
+        {
+            int moyenne = 0;
+            int prixTotal = 0;
 
-            Console.WriteLine("la moyenne des nombre est de"+moyenne);
-            
-        }
-        static void QuitterMenu()
-        {
-                Console.WriteLine("vous quitter le menu");
-        }
-        static void nombreRevien(ref int[] table)
-        {
-            int nombresaisie=0;
-            int revenue = 0;
-            Convert.ToInt32(Console.ReadLine());
-            int cpt= 0;
-            bool nombrerevenu=false;
-            while(nombrerevenu== false && cpt<table.Length)
+            for (int i=0;i<tabVaisseaux.Length;i++)
             {
-                if(nombresaisie==table[cpt])
-                {
-                    revenue = revenue + 1;
-                    if(revenue==3)
-                    {
-                        nombrerevenu = true;
-
-                        Console.WriteLine("le nombre revient 3 fois ou plus ");
-                    }
-                   
-                }
-                else
-                {
-                    cpt++;
-                }
-                Console.WriteLine("le nombre ne revien pas 3 fois");
+                prixTotal = prix+prixTotal;
             }
+            moyenne = prixTotal / 10;
+        }
+        static void quitter()
+        {
+            Console.WriteLine("vous quitter le jeu");
         }
         static void Main(string[] args)
         {
+            int[] tabVaisseaux = new int[10];
+
+            int commun = 0;
+            int rare = 0;
+            int épic = 0;
+            int légendaire = 0;
+            int vitesse = 0;
+            int vie = 0;
+            int prix = 0;
+            for (int i = 0; i < tabVaisseaux.Length; i++)
+            {
+                Random genererNb = new Random();
+                int rareté = genererNb.Next(1, 10);
+
+                if (rareté < 5)
+                {
+                    rareté = commun;
+
+                    Random genererVitesse = new Random();
+                    vitesse = genererVitesse.Next(10, 16);
+
+                    Random genererVie = new Random();
+                    vie = genererVie.Next(100, 151);
+
+                    prix = 2000;
+                }
+                else if (rareté >= 5 && rareté <= 7)
+                {
+                    rareté = rare;
+
+                    Random genererVitesse = new Random();
+                    vitesse = genererVitesse.Next(12, 26);
+
+                    Random genererVie = new Random();
+                    vie = genererVie.Next(140, 251);
+
+                    prix = 4500;
+                }
+                else if (rareté == 8 || rareté == 9)
+                {
+                    rareté = épic;
+
+                    Random genererVitesse = new Random();
+                    vitesse = genererVitesse.Next(23, 46);
+
+                    Random genererVie = new Random();
+                    vie = genererVie.Next(200, 601);
+
+                    prix = 8000;
+
+                }
+                else
+                {
+                    rareté = légendaire;
+
+                    Random genererVitesse = new Random();
+                    vitesse = genererVitesse.Next(40, 71);
+
+                    Random genererVie = new Random();
+                    vie = genererVie.Next(550, 2001);
+
+                    prix = 20000;
+
+                }
+            }
+
+            afficherMenu();
+
             int choix=0;
-            Random generer = new Random();
-            int[] table = new int[300];
 
-            for (int i = 0; i < table.Length; i++)
+            choix = Convert.ToInt32(Console.ReadLine());
+
+            switch (choix)
             {
-                table[i] = generer.Next(1, 10001);
+                case 1: afficherVaisseaux(ref tabVaisseaux); break;
+                case 2: vaisseauExiste(ref tabVaisseaux); break;
+                case 3: grandeVie(ref tabVaisseaux); break;
+                case 4: moyenne(ref prix, tabVaisseaux); break;
+                case 5: quitter(); break;
             }
 
-            AfficherMenu();
-            choix= Convert.ToInt32(Console.ReadLine());
-            switch(choix)
-            {
-                case 1:AfficherGrandNombre(ref table);break;
-                case 2:AfficherPetitNombre(ref table);break;
-                case 3:VérifierNombreExiste(ref table);break;
-                case 4:AfficherMoyenne(ref table);break;
-                case 5:QuitterMenu();break;
-                case 6:nombreSupérieur(ref table);break;
-                case 7:nombreRevien(ref table);break;
-            }
-        
-      
         }
     }
 }
