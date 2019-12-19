@@ -1,0 +1,7 @@
+M:\visual studio 2017\SQL Server Management Studio\examFinalProg\examFinalProg\bin\Debug\examFinalProg.exe.config
+M:\visual studio 2017\SQL Server Management Studio\examFinalProg\examFinalProg\bin\Debug\examFinalProg.exe
+M:\visual studio 2017\SQL Server Management Studio\examFinalProg\examFinalProg\bin\Debug\examFinalProg.pdb
+M:\visual studio 2017\SQL Server Management Studio\examFinalProg\examFinalProg\obj\Debug\examFinalProg.csprojAssemblyReference.cache
+M:\visual studio 2017\SQL Server Management Studio\examFinalProg\examFinalProg\obj\Debug\examFinalProg.csproj.CoreCompileInputs.cache
+M:\visual studio 2017\SQL Server Management Studio\examFinalProg\examFinalProg\obj\Debug\examFinalProg.exe
+M:\visual studio 2017\SQL Server Management Studio\examFinalProg\examFinalProg\obj\Debug\examFinalProg.pdb
