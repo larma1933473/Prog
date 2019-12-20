@@ -1,0 +1,7 @@
+M:\visual studio 2017\Projects\jeux entrepriseInfo\jeux entrepriseInfo\bin\Debug\jeux entrepriseInfo.exe.config
+M:\visual studio 2017\Projects\jeux entrepriseInfo\jeux entrepriseInfo\bin\Debug\jeux entrepriseInfo.exe
+M:\visual studio 2017\Projects\jeux entrepriseInfo\jeux entrepriseInfo\bin\Debug\jeux entrepriseInfo.pdb
+M:\visual studio 2017\Projects\jeux entrepriseInfo\jeux entrepriseInfo\obj\Debug\jeux entrepriseInfo.csprojAssemblyReference.cache
+M:\visual studio 2017\Projects\jeux entrepriseInfo\jeux entrepriseInfo\obj\Debug\jeux entrepriseInfo.csproj.CoreCompileInputs.cache
+M:\visual studio 2017\Projects\jeux entrepriseInfo\jeux entrepriseInfo\obj\Debug\jeux entrepriseInfo.exe
+M:\visual studio 2017\Projects\jeux entrepriseInfo\jeux entrepriseInfo\obj\Debug\jeux entrepriseInfo.pdb
